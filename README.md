@@ -1,4 +1,4 @@
-# EMT 26F Study — Module 1 (Ch 7 & 8)
+# Rig Notes — EMT 26F study app
 
 Personal study app for Texas 26 F EMT I (National EMS Academy San Antonio).
 
