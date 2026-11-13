@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMT Module 1 Study — Ch 7 & 8</title>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d1d1b;--mute:#6b6a65;--line:#e3e1da;--acc:#1f5f8b;--ok:#2e7d4f;--bad:#b3392f;--okbg:#e5f4e4;--badbg:#fbebeb}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--card:#22221f;--ink:#efede7;--mute:#a19f98;--line:#3a3935;--acc:#7db4dc;--ok:#7ccf98;--bad:#f08a80;--okbg:#1f3424;--badbg:#3a2220}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{padding:16px 16px 8px;max-width:720px;margin:0 auto}
+h1{font-size:20px;margin:0 0 2px}
+.sub{color:var(--mute);font-size:13px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .in{max-width:720px;margin:0 auto;display:flex;gap:4px;padding:6px 10px;overflow-x:auto}
+nav button{flex:1;min-width:76px;border:0;background:transparent;color:var(--mute);padding:10px 8px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer}
+nav button.on{background:var(--card);color:var(--acc);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+main{max-width:720px;margin:0 auto;padding:14px 14px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 14px;border-radius:10px;font-size:15px;cursor:pointer}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn:disabled{opacity:.4}
+.pill{font-size:12px;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.flash{min-height:220px;display:flex;flex-direction:column;justify-content:center;text-align:center;cursor:pointer;user-select:none}
+.flash .q{font-size:19px;font-weight:600}
+.flash .a{font-size:17px;margin-top:14px;color:var(--acc)}
+.flash .hint{font-size:12px;color:var(--mute);margin-top:16px}
+.opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:12px 14px;border-radius:10px;margin:8px 0;font-size:15px;cursor:pointer}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.why{margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--bg);font-size:14px}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin:8px 0 14px}
+.bar i{display:block;height:100%;background:var(--acc)}
+h2{font-size:17px;margin:4px 0 10px}
+h3{font-size:15px;margin:14px 0 6px;color:var(--acc)}
+ul{padding-left:20px;margin:6px 0}
+li{margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:600}
+.hide{display:none}
+.big{font-size:28px;font-weight:700}
+select{font-size:15px;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+<h1>EMT Module 1 — Ch 7 A&amp;P · Ch 8 Pathophysiology</h1>
+<div class="sub">Texas 26 F EMT I · built 2026-11-13 from MyLab Ch 8 outcomes, Module 1 Study Guide and Ch 7 Review</div>
+</header>
+<nav><div class="in">
+<button data-t="due" class="on">Due</button>
+<button data-t="cards">Flashcards</button>
+<button data-t="quiz">Quiz</button>
+<button data-t="listen">Listen</button>
+<button data-t="review">Review</button>
+</div></nav>
+<main>
+
+<section id="due">
+<div class="card">
+<h2>What's next</h2>
+<table>
+<tr><th>Due (CST)</th><th>Item</th><th>Where</th></tr>
+<tr><td>Sun 11/16 11:59 PM</td><td>Mock Exam (30 pts) — LockDown + webcam, locks at due time</td><td>Canvas</td></tr>
+<tr><td>Tue 11/18 11:59 PM</td><td>Ch 08 Chapter Test (30 pts) — 2 attempts</td><td>MyLab BRADY</td></tr>
+<tr><td>Thu 11/20 11:59 PM</td><td>Module 1 Exam Ch 7 &amp; 8 (75 pts) — LockDown + webcam</td><td>Canvas</td></tr>
+</table>
+<p class="sub">Ch 07 Chapter Test done: 28/30 (attempt 1 of 2).</p>
+</div>
+<div class="card">
+<h2>Your progress</h2>
+<div class="row"><div><div class="big" id="pCards">0</div><div class="sub">cards marked "got it"</div></div>
+<div style="width:24px"></div><div><div class="big" id="pQuiz">–</div><div class="sub">best quiz score</div></div></div>
+<p class="sub">Plan: Flashcards → Quiz → retry misses → Review the night before.</p>
+</div>
+</section>
+
+<section id="cards" class="hide">
+<div class="row" style="margin-bottom:10px">
+<select id="cardSet"><option value="all">All cards</option><option value="8">Ch 8 only</option><option value="7">Ch 7 only</option><option value="todo">Not yet known</option></select>
+<span class="pill" id="cardPos"></span>
+</div>
+<div class="card flash" id="flash"><div class="q" id="fq"></div><div class="a hide" id="fa"></div><div class="hint" id="fh">Tap to flip</div></div>
+<div class="row">
+<button class="btn" id="prev">◀</button>
+<button class="btn" id="miss" style="flex:1">Again</button>
+<button class="btn pri" id="know" style="flex:1">Got it</button>
+<button class="btn" id="next">▶</button>
+</div>
+</section>
+
+<section id="quiz" class="hide">
+<div class="row" style="margin-bottom:6px">
+<select id="quizSet"><option value="all">All 25</option><option value="8">Ch 8 (Q1–20)</option><option value="7">Ch 7 (Q21–25)</option><option value="miss">Missed last time</option></select>
+<button class="btn" id="qStart">Start</button>
+<span class="pill" id="qPos"></span>
+</div>
+<div class="bar"><i id="qBar" style="width:0"></i></div>
+<div class="card" id="qBox"></div>
+</section>
+
+<section id="listen" class="hide">
+<div class="card">
+<h2>Listen while driving</h2>
+<p class="sub">Recorded audio: each question, a 5-second pause to answer out loud, then the answer. Start it before you drive.</p>
+<h3>Flashcards — 42 cards (about 10 min)</h3>
+<audio controls preload="none" style="width:100%" src="audio/EMT_M1_Flashcards.mp3"></audio>
+<h3>Practice quiz — 25 questions (about 9 min)</h3>
+<audio controls preload="none" style="width:100%" src="audio/EMT_M1_Quiz.mp3"></audio>
+<h3>Rapid review (about 2 min)</h3>
+<audio controls preload="none" style="width:100%" src="audio/EMT_M1_RapidReview.mp3"></audio>
+<p class="sub" style="margin-top:12px">For playback with the screen off, use the MP3 files from the chat or Google Drive (10_EMT_SCHOOL/STUDY) in your phone's Files or music app.</p>
+</div>
+</section>
+
+<section id="review" class="hide">
+<div class="card">
+<h2>10-minute rapid review</h2>
+<ul>
+<li>Aerobic = O2, lots of ATP (~36–38), CO2 + water. Anaerobic = 2 ATP + lactic acid → acidosis → Na/K pump fails → cell swells and dies.</li>
+<li>Perfusion needs pump + container + fluid. Shock = hypoperfusion.</li>
+<li>Air: N2 78%, O2 21%, CO2 0.04%.</li>
+<li>Boyle: chest volume up → pressure down → air in. Exhalation at rest is passive.</li>
+<li>Minute volume = VT × RR. Alveolar ventilation = (VT − 150) × RR. Fast + shallow = poor alveolar ventilation.</li>
+<li>Drive: CO2 (medulla) first; low O2 (carotid/aortic bodies) is the backup.</li>
+<li>V/Q: no blood flow = dead space (PE); no air = shunt (pneumonia).</li>
+<li>O2 ~98% on hemoglobin. CO2 ~70% as bicarbonate.</li>
+<li>Hydrostatic pushes out; oncotic (albumin) pulls in; leaky capillaries = edema.</li>
+<li>CO = HR × SV. BP = CO × SVR. SV = preload, afterload, contractility. Frank–Starling = stretch → stronger squeeze.</li>
+<li>Baroreceptors (carotid sinus, aortic arch) → low BP → tachycardia, vasoconstriction, pale cool skin. Low BP is a LATE sign.</li>
+<li>Receptors: alpha-1 vessels constrict; beta-1 heart faster/stronger; beta-2 lungs dilate.</li>
+<li>Blood path: RA → tricuspid → RV → pulmonic → lungs → LA → mitral → LV → aortic → aorta.</li>
+<li>Adequate breathing = adequate rate AND depth.</li>
+</ul>
+</div>
+<div class="card">
+<h2>Volumes (normal adult)</h2>
+<table>
+<tr><th>Term</th><th>Meaning</th><th>Figure</th></tr>
+<tr><td>Tidal volume</td><td>One normal breath</td><td>~500 mL (5–7 mL/kg)</td></tr>
+<tr><td>Dead space</td><td>Never reaches alveoli</td><td>~150 mL</td></tr>
+<tr><td>Minute volume</td><td>VT × rate</td><td>500 × 12 = 6 L/min</td></tr>
+<tr><td>Alveolar ventilation</td><td>(VT − dead space) × rate</td><td>350 × 12 = 4.2 L/min</td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Adrenergic receptors</h2>
+<table>
+<tr><th>Receptor</th><th>Where</th><th>Effect</th></tr>
+<tr><td>Beta-1</td><td>Heart</td><td>Faster rate, stronger contraction, faster conduction</td></tr>
+<tr><td>Beta-2</td><td>Bronchial smooth muscle</td><td>Bronchodilation, vasodilation</td></tr>
+<tr><td>Alpha-1</td><td>Arterioles</td><td>Vasoconstriction</td></tr>
+<tr><td>Alpha-2</td><td>Presynaptic nerve endings</td><td>Less norepinephrine release</td></tr>
+</table>
+<p class="sub">One heart, two lungs.</p>
+</div>
+<div class="card">
+<h2>MyLab Ch 8 outcomes (what the test checks)</h2>
+<ul>
+<li>8.3 Aerobic vs anaerobic metabolism</li>
+<li>8.4 Perfusion and its components</li>
+<li>8.5 Composition of ambient air · 8.6 Boyle's law</li>
+<li>8.7 Compliance and airway resistance · 8.8 Loss of pleural contact</li>
+<li>8.9 Tidal, alveolar, minute volume · 8.10 Chemoreceptors, lung receptors</li>
+<li>8.11 V/Q ratio · 8.12 O2/CO2 transport · 8.13 Gas exchange</li>
+<li>8.14 Blood composition · 8.15 Hydrostatic vs oncotic pressure</li>
+<li>8.16 Cardiac output · 8.17 SVR and BP · 8.18 Local, neural, hormonal control</li>
+<li>8.19 Baroreceptors and chemoreceptors · 8.20 Ventilation + perfusion + metabolism</li>
+</ul>
+<p class="sub">Textbook body (PEC 12th ed., Ch 8 pp. 203–230) not yet cross-checked.</p>
+</div>
+</section>
+
+</main>
+<script>
+const CARDS=[
+["8","Aerobic metabolism makes…","Lots of ATP (~36–38/glucose) + CO2 + water. Needs oxygen."],
+["8","Anaerobic metabolism makes…","Only 2 ATP + lactic acid → metabolic acidosis."],
+["8","No ATP → sodium–potassium pump fails → ?","Sodium and water enter the cell → it swells, ruptures, dies."],
+["8","Perfusion definition","Delivery of O2 and nutrients to cells and removal of waste by adequate blood flow."],
+["8","Three parts needed for perfusion","Pump (heart), container (vessels), fluid (blood)."],
+["8","Ambient air composition","N2 ~78%, O2 ~21%, CO2 ~0.04%."],
+["8","Boyle's law applied to inhalation","Chest volume up → pressure falls below atmospheric → air flows in."],
+["8","Compliance","How easily lungs and chest wall stretch. Low compliance = more work of breathing, harder to bag."],
+["8","Loss of parietal–visceral pleural contact","Pneumothorax / hemothorax → lung on that side collapses."],
+["8","Minute volume formula","Tidal volume × respiratory rate (500 mL × 12 = 6 L/min)."],
+["8","Alveolar ventilation formula","(Tidal volume − dead space 150 mL) × rate."],
+["8","Why is fast shallow breathing bad?","Most of each breath only fills dead space → alveolar ventilation falls."],
+["8","Main drive to breathe","Rising CO2 / falling pH sensed by central chemoreceptors in the medulla (hypercapnic drive)."],
+["8","Hypoxic drive","Backup drive: low O2 sensed by peripheral chemoreceptors (carotid bodies, aortic arch)."],
+["8","Hering–Breuer reflex","Lung stretch receptors stop over-inflation."],
+["8","Dead space (V/Q)","Ventilation without perfusion — e.g., pulmonary embolism."],
+["8","Shunt (V/Q)","Perfusion without ventilation — e.g., pneumonia, collapsed alveoli."],
+["8","How is O2 carried in blood?","~97–98% on hemoglobin; ~2–3% dissolved in plasma."],
+["8","How is CO2 carried in blood?","~70% bicarbonate, ~20% on hemoglobin, ~7–10% dissolved."],
+["8","Blood composition","Plasma ~55% + formed elements ~45% (RBCs, WBCs, platelets)."],
+["8","Hydrostatic vs oncotic pressure","Hydrostatic pushes fluid out of capillaries; oncotic (albumin) pulls it back in."],
+["8","Three causes of edema","Hydrostatic ↑ (heart failure), oncotic ↓ (low protein), leaky capillaries (sepsis, burns, allergy)."],
+["8","Cardiac output formula","CO = heart rate × stroke volume."],
+["8","Blood pressure formula","BP = cardiac output × systemic vascular resistance."],
+["8","Stroke volume depends on…","Preload, afterload, contractility."],
+["8","Frank–Starling law","More ventricular stretch (preload) → stronger contraction, up to a limit."],
+["8","Where are baroreceptors?","Carotid sinus and aortic arch."],
+["8","Compensated shock signs","Tachycardia, pale cool skin, normal BP. Falling BP is a late sign."],
+["8","Hormones that raise BP","Epinephrine/norepinephrine, ADH, renin–angiotensin–aldosterone."],
+["7","Beta-1 receptor","Heart → faster rate, stronger contraction, faster conduction."],
+["7","Beta-2 receptor","Bronchial smooth muscle → bronchodilation (two lungs)."],
+["7","Alpha-1 receptor","Blood vessels → vasoconstriction."],
+["7","Alpha-2 receptor","Presynaptic nerve endings → less norepinephrine released."],
+["7","Cardiac muscle is special because…","Automaticity: makes its own impulse. Involuntary and striated."],
+["7","Upper vs lower airway dividing line","The larynx (vocal cords / cricoid ring)."],
+["7","Ventilation vs respiration","Ventilation = moving air in/out. Respiration = gas exchange."],
+["7","Adequate breathing requires…","Adequate rate AND adequate tidal volume (depth)."],
+["7","Child airway differences","Larger tongue and occiput, narrow soft trachea, floppy epiglottis, infants nose-breathe."],
+["7","Blood path through the heart","RA → tricuspid → RV → pulmonic → lungs → LA → mitral → LV → aortic → aorta."],
+["7","Somatic vs autonomic","Somatic = voluntary skeletal muscle. Autonomic = involuntary (sympathetic / parasympathetic)."],
+["7","Fowler's / semi-Fowler's","Sitting up ~45–90° / ~30–45°."],
+["7","Kidney functions","Filter blood, remove waste, balance fluid, electrolytes, acid–base, help control BP."]
+];
+const Q=[
+["8","Without oxygen, cells produce energy by anaerobic metabolism. The main harmful by-product is:",["carbon dioxide","lactic acid","bicarbonate","water"],1,"Anaerobic metabolism makes lactic acid → acidosis."],
+["8","When ATP runs out, the sodium–potassium pump fails. The cell then:",["shrinks","swells and may rupture","produces more glucose","stops using oxygen"],1,"Sodium and water enter the cell."],
+["8","The three components needed for perfusion are:",["brain, lungs, kidneys","pump, container, fluid","airway, breathing, circulation","plasma, platelets, red cells"],1,"Heart, vessels, blood."],
+["8","Oxygen makes up about what share of ambient air?",["78%","50%","21%","0.04%"],2,"~21% O2; nitrogen ~78%."],
+["8","During inhalation, the pressure inside the chest compared with the atmosphere is:",["higher","equal","lower","unrelated"],2,"Boyle's law: volume up, pressure down."],
+["8","A patient with a large pneumothorax cannot fill one lung because:",["the diaphragm is paralyzed","the pleural seal is lost","the bronchi are constricted","oxygen cannot diffuse"],1,"Air breaks the parietal–visceral seal."],
+["8","Tidal volume 400 mL, rate 20/min. Minute volume is:",["4 L/min","6 L/min","8 L/min","10 L/min"],2,"400 × 20 = 8,000 mL."],
+["8","Same patient, dead space 150 mL. Alveolar ventilation is:",["3 L/min","5 L/min","8 L/min","2.5 L/min"],1,"(400 − 150) × 20 = 5,000 mL."],
+["8","Rate 36, very shallow breaths. The best interpretation is:",["minute volume is high so breathing is adequate","much of each breath only fills dead space","the patient is hyperventilating and needs a bag","rate alone confirms adequacy"],1,"Shallow breaths mostly fill dead space."],
+["8","The primary drive to breathe in a healthy person is:",["low oxygen sensed by carotid bodies","rising CO2 sensed in the medulla","lung stretch receptors","blood pressure"],1,"Hypercapnic drive, central chemoreceptors."],
+["8","A blood clot blocks a pulmonary artery. Ventilated alveoli now get no blood flow. This is:",["shunt","dead space","hypercapnia","atelectasis"],1,"Ventilation without perfusion."],
+["8","Most oxygen in the blood is carried:",["dissolved in plasma","as bicarbonate","bound to hemoglobin","on platelets"],2,"~97–98% on hemoglobin."],
+["8","Most carbon dioxide in the blood is carried as:",["bicarbonate","dissolved gas","bound to albumin","carbon monoxide"],0,"~70% as bicarbonate."],
+["8","Fluid is pulled back into capillaries mainly by:",["hydrostatic pressure","plasma oncotic pressure","cardiac output","baroreceptors"],1,"Albumin draws water back."],
+["8","A burn or sepsis patient develops edema mainly because:",["oncotic pressure rises","capillaries become leaky","heart rate falls","blood becomes thicker"],1,"Leaky capillaries let fluid out."],
+["8","Cardiac output equals:",["BP × SVR","HR × stroke volume","stroke volume ÷ HR","preload × afterload"],1,"CO = HR × SV."],
+["8","More filling of the ventricle produces a stronger contraction, up to a limit. This is:",["Boyle's law","the Frank–Starling law","the Fick principle","the Hering–Breuer reflex"],1,"Stretch → stronger contraction."],
+["8","A trauma patient has HR 124, pale cool skin, BP 118/80. The best description is:",["normal findings","compensated shock","decompensated shock","hypertension"],1,"BP held up by compensation."],
+["8","Baroreceptors that sense a drop in BP are located in the:",["medulla and pons","carotid sinus and aortic arch","kidneys","alveoli"],1,"Carotid sinus, aortic arch."],
+["8","Stimulating alpha-1 receptors in blood vessels causes:",["vasodilation","vasoconstriction","bronchodilation","slower heart rate"],1,"Alpha-1 constricts vessels."],
+["7","The wrist is ___ to the elbow.",["proximal","distal","medial","superior"],1,"Farther from the trunk."],
+["7","A patient sitting upright at about 90° is in:",["supine","Trendelenburg","Fowler's","lateral recumbent"],2,"Fowler's = sitting up."],
+["7","Blood leaves the right ventricle through the:",["aortic valve","mitral valve","pulmonic valve","tricuspid valve"],2,"Right ventricle → pulmonic valve."],
+["7","Stimulating beta-2 receptors causes:",["bronchodilation","vasoconstriction","slower heart rate","bronchoconstriction"],0,"Two lungs: beta-2."],
+["7","The upper and lower airways are divided at the:",["epiglottis tip","larynx","carina","nasopharynx"],1,"Larynx is the dividing line."]
+];
+const S={get(k,d){try{const v=localStorage.getItem('emtm1_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('emtm1_'+k,JSON.stringify(v))}catch(e){}}};
+let known=new Set(S.get('known',[])),missed=S.get('missed',[]),best=S.get('best',null);
+const $=id=>document.getElementById(id);
+function prog(){$('pCards').textContent=known.size+' / '+CARDS.length;$('pQuiz').textContent=best?best:'–'}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));['due','cards','quiz','listen','review'].forEach(t=>$(t).classList.toggle('hide',t!==b.dataset.t));window.scrollTo(0,0)});
+// flashcards
+let deck=[],ci=0;
+function buildDeck(){const s=$('cardSet').value;deck=CARDS.map((c,i)=>i).filter(i=>s==='all'||(s==='todo'?!known.has(i):CARDS[i][0]===s));ci=0;showCard()}
+function showCard(){if(!deck.length){$('fq').textContent='All cards in this set are marked known.';$('fa').classList.add('hide');$('cardPos').textContent='0 / 0';return}const c=CARDS[deck[ci]];$('fq').textContent=c[1];$('fa').textContent=c[2];$('fa').classList.add('hide');$('fh').textContent='Tap to flip'+(known.has(deck[ci])?' · known':'');$('cardPos').textContent=(ci+1)+' / '+deck.length}
+$('flash').onclick=()=>{$('fa').classList.toggle('hide')};
+$('next').onclick=()=>{if(deck.length){ci=(ci+1)%deck.length;showCard()}};
+$('prev').onclick=()=>{if(deck.length){ci=(ci-1+deck.length)%deck.length;showCard()}};
+$('know').onclick=()=>{if(!deck.length)return;known.add(deck[ci]);S.set('known',[...known]);prog();ci=(ci+1)%deck.length;showCard()};
+$('miss').onclick=()=>{if(!deck.length)return;known.delete(deck[ci]);S.set('known',[...known]);prog();ci=(ci+1)%deck.length;showCard()};
+$('cardSet').onchange=buildDeck;
+// quiz
+let qs=[],qi=0,score=0,wrong=[];
+function startQuiz(){const s=$('quizSet').value;qs=Q.map((q,i)=>i).filter(i=>s==='all'||(s==='miss'?missed.includes(i):Q[i][0]===s));if(!qs.length){$('qBox').innerHTML='<p>No missed questions saved yet. Take the full quiz first.</p>';$('qPos').textContent='';$('qBar').style.width='0';return}qs.sort(()=>Math.random()-.5);qi=0;score=0;wrong=[];showQ()}
+function showQ(){const n=qs[qi],q=Q[n];$('qPos').textContent=(qi+1)+' / '+qs.length;$('qBar').style.width=(qi/qs.length*100)+'%';
+let h='<div class="sub">Q'+(n+1)+' · Ch '+q[0]+'</div><p style="font-weight:600">'+q[1]+'</p>';q[2].forEach((o,i)=>h+='<button class="opt" data-i="'+i+'">'+'ABCD'[i]+') '+o+'</button>');h+='<div id="qAfter"></div>';$('qBox').innerHTML=h;
+$('qBox').querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(+b.dataset.i))}
+function answer(i){const n=qs[qi],q=Q[n],btns=$('qBox').querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);btns[q[3]].classList.add('ok');if(i===q[3])score++;else{btns[i].classList.add('bad');wrong.push(n)}
+$('qAfter').innerHTML='<div class="why"><b>'+(i===q[3]?'Correct.':'Answer: '+'ABCD'[q[3]]+'.')+'</b> '+q[4]+'</div><div class="row" style="margin-top:10px"><button class="btn pri" id="qNext" style="flex:1">'+(qi+1<qs.length?'Next':'See score')+'</button></div>';$('qNext').onclick=()=>{qi++;qi<qs.length?showQ():finish()}}
+function finish(){$('qBar').style.width='100%';const pct=Math.round(score/qs.length*100);if($('quizSet').value==='all'){missed=wrong;S.set('missed',missed);const r=score+'/'+qs.length;if(!best||score>+best.split('/')[0]){best=r;S.set('best',best)}prog()}else if($('quizSet').value==='miss'){missed=missed.filter(x=>wrong.includes(x));S.set('missed',missed)}
+let h='<div class="big">'+score+' / '+qs.length+' ('+pct+'%)</div>';if(wrong.length){h+='<h3>Review these</h3><ul>'+wrong.map(n=>'<li>Q'+(n+1)+': '+Q[n][4]+'</li>').join('')+'</ul>'}else h+='<p>All correct.</p>';h+='<div class="row" style="margin-top:10px"><button class="btn pri" id="again">Try again</button></div>';$('qBox').innerHTML=h;$('again').onclick=startQuiz}
+$('qStart').onclick=startQuiz;
+$('qBox').innerHTML='<p>Pick a set and press Start. Questions are shuffled; each answer shows the reason right away.</p>';
+buildDeck();prog();
+</script>
+</body>
+</html>
