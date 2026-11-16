@@ -58,7 +58,7 @@ audio{width:100%;margin:2px 0 4px}
 <body>
 <header><div class="hd">
 <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
-<div><h1>Rig Notes</h1><div class="sub">EMT Module 1 · Ch 7 A&amp;P · Ch 8 Pathophysiology</div></div>
+<div><h1>Rig Notes</h1><div class="sub">EMT Module 1 · Ch 7 A&amp;P · Ch 8 Pathophysiology · Class 11/16</div></div>
 </div></header>
 <nav><div class="in"><button data-t="due" class="on"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="3"/></svg>Due</button><button data-t="cards"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 2h12a2 2 0 0 1 2 2v12"/></svg>Cards</button><button data-t="quiz"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"/></svg>Quiz</button><button data-t="listen"><svg viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></svg>Listen</button><button data-t="review"><svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h5"/></svg>Review</button></div></nav>
 <main>
@@ -83,7 +83,7 @@ audio{width:100%;margin:2px 0 4px}
 
 <section id="cards" class="hide">
 <div class="row" style="margin-bottom:10px">
-<select id="cardSet"><option value="all">All cards</option><option value="8">Ch 8 only</option><option value="7">Ch 7 only</option><option value="todo">Not yet known</option></select>
+<select id="cardSet"><option value="all">All cards</option><option value="c1">Class 11/16 only</option><option value="star">★ Must-memorize</option><option value="8">Ch 8 only</option><option value="7">Ch 7 only</option><option value="todo">Not yet known</option></select>
 <span class="pill" id="cardPos"></span>
 </div>
 <div class="card flash" id="flash"><div class="q" id="fq"></div><div class="a hide" id="fa"></div><div class="hint" id="fh">Tap to flip</div></div>
@@ -97,7 +97,7 @@ audio{width:100%;margin:2px 0 4px}
 
 <section id="quiz" class="hide">
 <div class="row" style="margin-bottom:6px">
-<select id="quizSet"><option value="all">All 25</option><option value="8">Ch 8 (Q1–20)</option><option value="7">Ch 7 (Q21–25)</option><option value="miss">Missed last time</option></select>
+<select id="quizSet"><option value="all">All 40</option><option value="c1">Class 11/16 (Q26–40)</option><option value="8">Ch 8 (Q1–20)</option><option value="7">Ch 7 (Q21–25)</option><option value="miss">Missed last time</option></select>
 <button class="btn" id="qStart">Start</button>
 <span class="pill" id="qPos"></span>
 </div>
@@ -109,7 +109,7 @@ audio{width:100%;margin:2px 0 4px}
 <div class="card">
 <h2>Listen while driving</h2>
 <p class="sub">Recorded audio: each question, a 5-second pause to answer out loud, then the answer. Start it before you drive.</p>
-<h3>Flashcards — 42 cards (about 10 min)</h3>
+<h3>Class 11/16 — read aloud (new)</h3><p class="sub">Your phone reads each card, pauses 5 seconds for you to answer out loud, then reads the answer. Keep the screen on.</p><div class="row"><select id="spSet"><option value="c1">Class 11/16 cards</option><option value="star">★ Must-memorize only</option></select><button class="btn pri" id="spGo">Play</button><button class="btn" id="spStop">Stop</button><span class="pill" id="spPos">Ready</span></div><h3>Flashcards — 42 cards (about 10 min)</h3>
 <audio controls preload="none" style="width:100%" src="audio/EMT_M1_Flashcards.mp3"></audio>
 <h3>Practice quiz — 25 questions (about 9 min)</h3>
 <audio controls preload="none" style="width:100%" src="audio/EMT_M1_Quiz.mp3"></audio>
@@ -138,6 +138,20 @@ audio{width:100%;margin:2px 0 4px}
 <li>Blood path: RA → tricuspid → RV → pulmonic → lungs → LA → mitral → LV → aortic → aorta.</li>
 <li>Adequate breathing = adequate rate AND depth.</li>
 </ul>
+</div>
+<div class="card">
+<h2>Class 11/16 — must-memorize ★</h2>
+<ul>
+<li>Alpha-1 vasoconstriction · beta-1 heart rate and force · beta-2 bronchodilation.</li>
+<li>Agonist activates a receptor; antagonist blocks it.</li>
+<li>Skin: epidermis → dermis → subcutaneous.</li>
+<li>Valves TPMA: tricuspid, pulmonic, mitral, aortic.</li>
+<li>Conduction: SA → AV → bundle of His → bundle branches → Purkinje. ECG: P atria, QRS ventricles, T recovery.</li>
+<li>Upper/lower airway divide at the cricoid cartilage.</li>
+<li>Spine: C1–C7, T1–T12, L1–L5, sacrum 5 fused, coccyx ~4 fused.</li>
+<li>Terms: hypovolemic, hyperglycemia, apnea, tachycardia, bradypnea (prefix + root + suffix).</li>
+</ul>
+<p class="sub">Full notes: Claude doc “EMT Class Notes — 11/16 Body Systems (Ch 7)”.</p>
 </div>
 <div class="card">
 <h2>Volumes (normal adult)</h2>
@@ -221,7 +235,56 @@ const CARDS=[
 ["7","Blood path through the heart","RA → tricuspid → RV → pulmonic → lungs → LA → mitral → LV → aortic → aorta."],
 ["7","Somatic vs autonomic","Somatic = voluntary skeletal muscle. Autonomic = involuntary (sympathetic / parasympathetic)."],
 ["7","Fowler's / semi-Fowler's","Sitting up ~45–90° / ~30–45°."],
-["7","Kidney functions","Filter blood, remove waste, balance fluid, electrolytes, acid–base, help control BP."]
+["7","Kidney functions","Filter blood, remove waste, balance fluid, electrolytes, acid–base, help control BP."],
+["c1","Three body planes","Sagittal (midsagittal) = left/right. Frontal (coronal) = front/back. Transverse = upper/lower."],
+["c1","Intercostal space","The gap between two ribs, named for the rib above it (2nd ICS = between ribs 2 and 3)."],
+["c1","Sternal angle (angle of Louis)","Where the 2nd rib attaches; the 2nd intercostal space is just below it."],
+["c1","Rib groups","12 pairs: 1-7 true, 8-10 false, 11-12 floating."],
+["c1","Abdominal quadrant organs","RUQ liver, gallbladder. LUQ stomach, spleen. RLQ appendix. LLQ sigmoid colon."],
+["c1","Six components of the skeleton","Skull, spinal column, thorax, pelvis, upper extremities, lower extremities."],
+["c1","★ Spinal column segments","Cervical C1-C7, thoracic T1-T12, lumbar L1-L5, sacrum (5 fused), coccyx (~4 fused)."],
+["c1","Ligament vs tendon","Ligament = bone to bone. Tendon = muscle to bone."],
+["c1","Radius vs ulna","Radius = thumb side. Ulna = pinky side."],
+["c1","Humerus","Upper arm bone, shoulder to elbow."],
+["c1","Tibia vs fibula","Tibia = medial, thick, weight-bearing. Fibula = lateral, thin."],
+["c1","Carpals / metacarpals vs tarsals / metatarsals","Carpals = wrist (8), metacarpals = palm (5). Tarsals = ankle (7), metatarsals = foot (5). Meta- = after."],
+["c1","Popliteal artery","Behind the knee; the femoral artery continues as the popliteal."],
+["c1","Joint types","Ball-and-socket (shoulder, hip), hinge (elbow, knee), pivot (C1-C2), gliding (carpals), saddle (thumb base), condyloid (wrist)."],
+["c1","Abduction vs adduction","Abduction = away from midline. Adduction = toward midline."],
+["c1","Pronation vs supination","Pronation = palm down. Supination = palm up (holds the soup)."],
+["c1","Three muscle types","Skeletal = voluntary. Smooth = involuntary (vessels, gut, airways). Cardiac = involuntary + automaticity."],
+["c1","★ Where do the upper and lower airways divide?","At the cricoid cartilage (larynx)."],
+["c1","What makes the diaphragm pull air in?","It contracts and moves down - chest volume up, pressure down (negative pressure) - air flows in."],
+["c1","Parietal vs visceral pleura","Parietal lines the chest wall. Visceral covers the lung. Pleural space between."],
+["c1","★ Adequate breathing (4 checks)","Adequate rate and tidal volume, regular rhythm, effortless, no accessory muscle use."],
+["c1","Albuterol","Beta-2 agonist - bronchodilator."],
+["c1","Epi + albuterol together?","Yes (e.g. anaphylaxis with wheezing, epi first). Watch tachycardia / dysrhythmia. Follow protocol."],
+["c1","★ TPMA","Tricuspid, Pulmonic, Mitral, Aortic - the valves in the order blood meets them."],
+["c1","Pulmonary artery vs pulmonary vein","Pulmonary artery = only artery with deoxygenated blood. Pulmonary vein = only vein with oxygenated blood (into the LA)."],
+["c1","Septum","Wall dividing the right and left heart."],
+["c1","Coronary arteries","Branch from the base of the aorta; feed the heart muscle itself. Blocked = MI."],
+["c1","Aortic dissection clue","Different BP in the two arms (often >20 mmHg) + tearing chest pain to the back."],
+["c1","Systolic vs diastolic","Systolic = pressure while ventricles contract. Diastolic = pressure left while ventricles relax."],
+["c1","★ Cardiac conduction path","SA node - AV node - bundle of His - bundle branches - Purkinje fibers."],
+["c1","SA node vs AV node","SA = pacemaker in the RA, fires first, 60-100/min. AV = delays the signal so ventricles can fill."],
+["c1","★ ECG waves","P = atria depolarize. QRS = ventricles depolarize. T = ventricles repolarize."],
+["c1","Blood components","Plasma (~55%), RBCs (O2), WBCs (infection), platelets (clotting)."],
+["c1","Perfusion","Delivery of O2 and nutrients to cells and removal of wastes. Hypoperfusion = shock."],
+["c1","★ Why does lactic acid build up?","No O2 - pyruvate cannot enter mitochondria - becomes lactate - H+ builds - metabolic acidosis - breathing speeds up."],
+["c1","CO2 transport","~70% bicarbonate in plasma, ~20% on hemoglobin, ~10% dissolved."],
+["c1","CNS vs PNS","CNS = brain + spinal cord. PNS = all nerves outside it."],
+["c1","Why does the brainstem control breathing?","Medulla sets the automatic rhythm, pons adjusts it; CO2 is the main drive. Brainstem injury = abnormal breathing."],
+["c1","RAS","Reticular activating system - brainstem core, through thalamus to cortex. Keeps us awake."],
+["c1","Sympathetic vs parasympathetic","Sympathetic = fight or flight (HR up, sweating, shaking). Parasympathetic = rest and digest (HR down, vagus)."],
+["c1","Neurotransmitters","Sympathetic = norepinephrine (+ epinephrine from adrenal medulla). Parasympathetic = acetylcholine."],
+["c1","★ Alpha-1, beta-1, beta-2","Alpha-1 = vasoconstriction. Beta-1 = heart rate and force. Beta-2 = bronchodilation."],
+["c1","★ Agonist vs antagonist","Agonist activates a receptor (albuterol). Antagonist blocks it (beta blocker, naloxone)."],
+["c1","★ Skin layers, shallow to deep","Epidermis - dermis - subcutaneous."],
+["c1","Spleen","Lymphatic organ in the LUQ; ruptures in trauma - internal bleeding. Left shoulder pain = Kehr's sign."],
+["c1","UTI in older adults","Often shows up as confusion or delirium; foul cloudy urine."],
+["c1","★ cardi/o- parts","Root (cardi) + slash + combining vowel (o) + hyphen."],
+["c1","★ hypovolemic / hyperglycemia","Below-normal blood volume / above-normal blood glucose."],
+["c1","★ apnea / bradypnea / tachycardia","No breathing / slow breathing / fast heart rate."]
 ];
 const Q=[
 ["8","Without oxygen, cells produce energy by anaerobic metabolism. The main harmful by-product is:",["carbon dioxide","lactic acid","bicarbonate","water"],1,"Anaerobic metabolism makes lactic acid → acidosis."],
@@ -248,7 +311,22 @@ const Q=[
 ["7","A patient sitting upright at about 90° is in:",["supine","Trendelenburg","Fowler's","lateral recumbent"],2,"Fowler's = sitting up."],
 ["7","Blood leaves the right ventricle through the:",["aortic valve","mitral valve","pulmonic valve","tricuspid valve"],2,"Right ventricle → pulmonic valve."],
 ["7","Stimulating beta-2 receptors causes:",["bronchodilation","vasoconstriction","slower heart rate","bronchoconstriction"],0,"Two lungs: beta-2."],
-["7","The upper and lower airways are divided at the:",["epiglottis tip","larynx","carina","nasopharynx"],1,"Larynx is the dividing line."]
+["7","The upper and lower airways are divided at the:",["epiglottis tip","larynx","carina","nasopharynx"],1,"Larynx is the dividing line."],
+["c1","Which joint lets the head rotate side to side?",["hinge", "pivot", "saddle", "gliding"],1,"C1-C2 is a pivot joint."],
+["c1","A tendon connects:",["bone to bone", "muscle to bone", "muscle to muscle", "skin to bone"],1,"Ligament = bone to bone; tendon = muscle to bone."],
+["c1","The 2nd intercostal space lies:",["between ribs 1 and 2", "between ribs 2 and 3", "below the xiphoid", "at the jugular notch"],1,"Named for the rib above it."],
+["c1","The spleen lies in which quadrant?",["RUQ", "LUQ", "RLQ", "LLQ"],1,"LUQ - lymphatic organ, bleeds heavily in trauma."],
+["c1","Blood leaves the left ventricle through the:",["mitral valve", "pulmonic valve", "aortic valve", "tricuspid valve"],2,"TPMA - the A is last."],
+["c1","The only vein that carries oxygenated blood is the:",["superior vena cava", "pulmonary vein", "jugular vein", "coronary sinus"],1,"Pulmonary vein - lungs to LA."],
+["c1","On an ECG, the QRS complex shows:",["atrial depolarization", "ventricular depolarization", "ventricular repolarization", "the AV node delay"],1,"QRS = ventricles depolarize (contract)."],
+["c1","Which structure delays the impulse so the ventricles can fill?",["SA node", "AV node", "Purkinje fibers", "bundle of His"],1,"AV node."],
+["c1","A beta blocker is a beta-1:",["agonist", "antagonist", "alpha-1 agonist", "bronchodilator"],1,"It blocks beta-1 - heart rate down."],
+["c1","Without oxygen, pyruvate becomes:",["bicarbonate", "lactate (lactic acid)", "glucose", "urea"],1,"Anaerobic metabolism - acidosis."],
+["c1","A confused 82-year-old with foul-smelling urine most likely has:",["stroke", "UTI", "hypoglycemia", "dehydration only"],1,"UTI often presents as confusion in older adults."],
+["c1","The deepest skin layer is the:",["epidermis", "dermis", "subcutaneous layer", "stratum corneum"],2,"Epidermis - dermis - subcutaneous."],
+["c1","Tachycardia means:",["slow heart rate", "fast heart rate", "no breathing", "slow breathing"],1,"tachy = fast, cardi = heart."],
+["c1","Different blood pressures in the two arms with tearing chest pain suggests:",["MI", "aortic dissection", "pneumothorax", "anaphylaxis"],1,"Classic aortic dissection clue."],
+["c1","Main drive to breathe is sensed in the:",["cerebellum", "medulla (CO2)", "spleen", "carotid bodies (O2) only"],1,"Rising CO2 sensed centrally."]
 ];
 const S={get(k,d){try{const v=localStorage.getItem('emtm1_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('emtm1_'+k,JSON.stringify(v))}catch(e){}}};
 let known=new Set(S.get('known',[])),missed=S.get('missed',[]),best=S.get('best',null);
@@ -257,7 +335,7 @@ function prog(){$('pCards').textContent=known.size+' / '+CARDS.length;$('pQuiz')
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));['due','cards','quiz','listen','review'].forEach(t=>$(t).classList.toggle('hide',t!==b.dataset.t));window.scrollTo(0,0)});
 // flashcards
 let deck=[],ci=0;
-function buildDeck(){const s=$('cardSet').value;deck=CARDS.map((c,i)=>i).filter(i=>s==='all'||(s==='todo'?!known.has(i):CARDS[i][0]===s));ci=0;showCard()}
+function buildDeck(){const s=$('cardSet').value;deck=CARDS.map((c,i)=>i).filter(i=>s==='all'||(s==='todo'?!known.has(i):s==='star'?CARDS[i][1].startsWith('★'):CARDS[i][0]===s));ci=0;showCard()}
 function showCard(){if(!deck.length){$('fq').textContent='All cards in this set are marked known.';$('fa').classList.add('hide');$('cardPos').textContent='0 / 0';return}const c=CARDS[deck[ci]];$('fq').textContent=c[1];$('fa').textContent=c[2];$('fa').classList.add('hide');$('fh').textContent='Tap to flip'+(known.has(deck[ci])?' · known':'');$('cardPos').textContent=(ci+1)+' / '+deck.length}
 $('flash').onclick=()=>{$('fa').classList.toggle('hide')};
 $('next').onclick=()=>{if(deck.length){ci=(ci+1)%deck.length;showCard()}};
@@ -269,7 +347,7 @@ $('cardSet').onchange=buildDeck;
 let qs=[],qi=0,score=0,wrong=[];
 function startQuiz(){const s=$('quizSet').value;qs=Q.map((q,i)=>i).filter(i=>s==='all'||(s==='miss'?missed.includes(i):Q[i][0]===s));if(!qs.length){$('qBox').innerHTML='<p>No missed questions saved yet. Take the full quiz first.</p>';$('qPos').textContent='';$('qBar').style.width='0';return}qs.sort(()=>Math.random()-.5);qi=0;score=0;wrong=[];showQ()}
 function showQ(){const n=qs[qi],q=Q[n];$('qPos').textContent=(qi+1)+' / '+qs.length;$('qBar').style.width=(qi/qs.length*100)+'%';
-let h='<div class="sub">Q'+(n+1)+' · Ch '+q[0]+'</div><p style="font-weight:600">'+q[1]+'</p>';q[2].forEach((o,i)=>h+='<button class="opt" data-i="'+i+'">'+'ABCD'[i]+') '+o+'</button>');h+='<div id="qAfter"></div>';$('qBox').innerHTML=h;
+let h='<div class="sub">Q'+(n+1)+' · '+(q[0]==='c1'?'Class 11/16':'Ch '+q[0])+'</div><p style="font-weight:600">'+q[1]+'</p>';q[2].forEach((o,i)=>h+='<button class="opt" data-i="'+i+'">'+'ABCD'[i]+') '+o+'</button>');h+='<div id="qAfter"></div>';$('qBox').innerHTML=h;
 $('qBox').querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(+b.dataset.i))}
 function answer(i){const n=qs[qi],q=Q[n],btns=$('qBox').querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);btns[q[3]].classList.add('ok');if(i===q[3])score++;else{btns[i].classList.add('bad');wrong.push(n)}
 $('qAfter').innerHTML='<div class="why"><b>'+(i===q[3]?'Correct.':'Answer: '+'ABCD'[q[3]]+'.')+'</b> '+q[4]+'</div><div class="row" style="margin-top:10px"><button class="btn pri" id="qNext" style="flex:1">'+(qi+1<qs.length?'Next':'See score')+'</button></div>';$('qNext').onclick=()=>{qi++;qi<qs.length?showQ():finish()}}
@@ -277,6 +355,16 @@ function finish(){$('qBar').style.width='100%';const pct=Math.round(score/qs.len
 let h='<div class="big">'+score+' / '+qs.length+' ('+pct+'%)</div>';if(wrong.length){h+='<h3>Review these</h3><ul>'+wrong.map(n=>'<li>Q'+(n+1)+': '+Q[n][4]+'</li>').join('')+'</ul>'}else h+='<p>All correct.</p>';h+='<div class="row" style="margin-top:10px"><button class="btn pri" id="again">Try again</button></div>';$('qBox').innerHTML=h;$('again').onclick=startQuiz}
 $('qStart').onclick=startQuiz;
 $('qBox').innerHTML='<p>Pick a set and press Start. Questions are shuffled; each answer shows the reason right away.</p>';
+
+// read-aloud for class cards (browser speech)
+let spOn=false,spT=null;
+function spSay(t){return new Promise(r=>{const u=new SpeechSynthesisUtterance(t.replace(/★ /g,''));u.lang='en-US';u.rate=.95;u.onend=r;u.onerror=r;speechSynthesis.speak(u)})}
+const wait=ms=>new Promise(r=>{spT=setTimeout(r,ms)});
+async function spPlay(){if(!('speechSynthesis' in window)){$('spPos').textContent='Read-aloud not supported here';return}spStop();spOn=true;const v=$('spSet').value;const list=CARDS.filter(c=>v==='star'?c[1].startsWith('★'):c[0]==='c1');
+for(let i=0;i<list.length&&spOn;i++){$('spPos').textContent=(i+1)+' / '+list.length;await spSay(list[i][1]);if(!spOn)break;await wait(5000);if(!spOn)break;await spSay(list[i][2]);if(!spOn)break;await wait(1500)}
+if(spOn)$('spPos').textContent='Done';spOn=false}
+function spStop(){spOn=false;clearTimeout(spT);try{speechSynthesis.cancel()}catch(e){}}
+$('spGo').onclick=spPlay;$('spStop').onclick=()=>{spStop();$('spPos').textContent='Stopped'};
 buildDeck();prog();
 </script>
 </body>
