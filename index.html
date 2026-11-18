@@ -98,7 +98,7 @@ audio{width:100%;margin:2px 0 4px}
 
 <section id="quiz" class="hide">
 <div class="row" style="margin-bottom:6px">
-<select id="quizSet"><option value="mx">Module 1 Mock Exam (20) — 11/18</option><option value="c2">Class 11/18 (15)</option><option value="all">All questions</option><option value="t8">Ch 8 Test review (27) — 11/17</option><option value="m2">Module 2 Ch 1–6 (14)</option><option value="c1">Class 11/16 (Q26–40)</option><option value="8">Ch 8 (Q1–20)</option><option value="7">Ch 7 (Q21–25)</option><option value="miss">Missed last time</option></select>
+<select id="quizSet"><option value="mx">Module 1 Mock Exam (20) — 11/18</option><option value="c2">Class 11/18 (27)</option><option value="all">All questions</option><option value="t8">Ch 8 Test review (27) — 11/17</option><option value="m2">Module 2 Ch 1–6 (14)</option><option value="c1">Class 11/16 (Q26–40)</option><option value="8">Ch 8 (Q1–20)</option><option value="7">Ch 7 (Q21–25)</option><option value="miss">Missed last time</option></select>
 <button class="btn" id="qStart">Start</button>
 <label class="pill" style="cursor:pointer"><input type="checkbox" id="qVoice"> 🔊 Read aloud</label>
 <span class="pill" id="qPos"></span>
@@ -308,6 +308,23 @@ const CARDS=[
 ["c2","EMCE confirm step","The evaluator must open and confirm your checkoff on their phone, or it does not count."],
 ["c2","Patient contacts","10 total across three 12-hour ride-along shifts, logged in EMCE."],
 ["c2","Orientation trainings","Clinical Orientation Paperwork and EMT Orientation Paperwork. Needed before any ambulance shift."],
+["c2","\u2605 Blood flow through the heart","Vena cava \u2192 right atrium \u2192 tricuspid \u2192 right ventricle \u2192 pulmonary valve \u2192 pulmonary artery \u2192 LUNGS \u2192 pulmonary veins \u2192 left atrium \u2192 mitral \u2192 left ventricle \u2192 aortic valve \u2192 aorta \u2192 body."],
+["c2","\u2605 Active vs passive breathing","Inhalation = active (diaphragm contracts). Exhalation = passive (muscles relax)."],
+["c2","How a breath starts","CO2 rises \u2192 brain senses it \u2192 diaphragm contracts \u2192 negative pressure pulls air in \u2192 gas exchange in alveoli \u2192 relax."],
+["c2","Carotid pulse","Neck. Use for unconscious or suspected cardiac arrest."],
+["c2","Radial pulse","Wrist, thumb side. Use for conscious patients."],
+["c2","Brachial pulse","Upper arm. Blood pressure, and pulse check in infants."],
+["c2","Aerobic vs anaerobic waste","Aerobic \u2192 carbon dioxide. Anaerobic \u2192 pyruvic acid becomes lactic acid."],
+["c2","CNS vs PNS","CNS = brain + spinal cord. PNS = everything else."],
+["c2","Sympathetic (fight or flight)","Adrenaline: blood to muscles, faster breathing, dilated pupils, faster heart."],
+["c2","Systolic vs diastolic","Systolic (top) = ventricles contracting. Diastolic = heart at rest."],
+["c2","\u2605 Minute volume","Respiratory rate \u00d7 tidal volume. Adult tidal volume about 500 mL."],
+["c2","\u2605 Cardiac output","Heart rate \u00d7 stroke volume."],
+["c2","Urinary system","Kidneys, ureters, bladder, urethra. Female urethra is shorter."],
+["c2","COPD","Umbrella term: emphysema and chronic bronchitis. Emphysema = alveoli break down, from smoking or vaping, incurable."],
+["c2","Adrenal glands","On top of the kidneys. Release epinephrine (fight or flight), cortisol, aldosterone."],
+["c2","Muscle types","Skeletal = voluntary. Smooth = involuntary, lines organs. Cardiac = heart."],
+["c2","\u2605 Pediatric airway","More anterior, large tongue, large occiput tips the head forward when flat \u2192 towel under the shoulders."],
 ];
 const Q=[
 ["8","Without oxygen, cells produce energy by anaerobic metabolism. The main harmful by-product is:",["carbon dioxide","lactic acid","bicarbonate","water"],1,"Anaerobic metabolism makes lactic acid → acidosis."],
@@ -385,6 +402,18 @@ const Q=[
 ["c2","In EMCE, how many checkoffs can you do with the same partner?",["1", "2", "3", "6"],1,"A third with the same person is flagged and does not count."],
 ["c2","Peer checkoffs needed per skill before the instructor checkoff:",["3", "4", "6", "10"],2,"Six peer checkoffs."],
 ["c2","Patient contacts required across the three ride-along shifts:",["5", "6", "10", "12"],2,"Ten, logged in EMCE."],
+["c2","After the right ventricle, blood goes through the:",["mitral valve", "pulmonary valve to the pulmonary artery", "aortic valve", "tricuspid valve"],1,"Right ventricle \u2192 pulmonary valve \u2192 pulmonary artery \u2192 lungs."],
+["c2","Blood returning from the lungs enters the:",["right atrium", "left atrium", "right ventricle", "left ventricle"],1,"Pulmonary veins \u2192 left atrium \u2192 mitral valve \u2192 left ventricle."],
+["c2","The valve between the right atrium and right ventricle is the:",["mitral", "aortic", "tricuspid", "pulmonary"],2,"Tricuspid is on the right; mitral is on the left."],
+["c2","Which part of breathing is active?",["exhalation", "inhalation", "both", "neither"],1,"Inhalation is active; exhalation is passive."],
+["c2","Pulse to check first in an unconscious adult:",["radial", "brachial", "carotid", "pedal"],2,"Carotid for unconscious or suspected arrest."],
+["c2","Pulse to check in an infant:",["carotid", "brachial", "radial", "femoral"],1,"Brachial for infants."],
+["c2","Minute volume equals:",["heart rate \u00d7 stroke volume", "respiratory rate \u00d7 tidal volume", "tidal volume \u2212 dead space", "rate \u00d7 oxygen saturation"],1,"Rate \u00d7 tidal volume."],
+["c2","Cardiac output equals:",["heart rate \u00d7 stroke volume", "respiratory rate \u00d7 tidal volume", "systolic \u2212 diastolic", "stroke volume \u00f7 heart rate"],0,"Heart rate \u00d7 stroke volume."],
+["c2","The central nervous system is:",["the brain and spinal cord", "all nerves outside the brain", "the heart's conduction system", "the spinal cord only"],0,"Everything else is peripheral."],
+["c2","A child lying flat may block his own airway because of a large:",["chest", "occiput", "neck", "trachea"],1,"Put a towel under the shoulders."],
+["c2","Which is an example of COPD?",["pneumonia", "emphysema", "appendicitis", "diabetes"],1,"COPD includes emphysema and chronic bronchitis."],
+["c2","Smooth muscle is:",["voluntary", "involuntary and lines the organs", "found only in the heart", "attached to bones"],1,"Skeletal is voluntary; cardiac is the heart."],
 ];
 const S={get(k,d){try{const v=localStorage.getItem('emtm1_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('emtm1_'+k,JSON.stringify(v))}catch(e){}}};
 let known=new Set(S.get('known',[])),missed=S.get('missed',[]),best=S.get('best',null);
