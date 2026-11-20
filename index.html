@@ -59,7 +59,7 @@ audio{width:100%;margin:2px 0 4px}
 <body>
 <header><div class="hd">
 <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
-<div><h1>Rig Notes</h1><div class="sub">EMT · Module 1 (Ch 7–8) · Ch 8 Test review · Module 2 (Ch 1–6)</div></div>
+<div><h1>Rig Notes</h1><div class="sub">EMT · Module 1 (Ch 7–8) · Ch 8 Test review · Module 2 (Ch 1–6) + scenario quiz</div></div>
 </div></header>
 <nav><div class="in"><button data-t="due" class="on"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="3"/></svg>Due</button><button data-t="cards"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 2h12a2 2 0 0 1 2 2v12"/></svg>Cards</button><button data-t="quiz"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"/></svg>Quiz</button><button data-t="listen"><svg viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></svg>Listen</button><button data-t="review"><svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h5"/></svg>Review</button></div></nav>
 <main>
@@ -84,7 +84,7 @@ audio{width:100%;margin:2px 0 4px}
 
 <section id="cards" class="hide">
 <div class="row" style="margin-bottom:10px">
-<select id="cardSet"><option value="all">All cards</option><option value="c2">Class 11/18 only</option><option value="m2">Module 2 (Ch 1–6)</option><option value="c1">Class 11/16 only</option><option value="star">★ Must-memorize</option><option value="8">Ch 8 only</option><option value="7">Ch 7 only</option><option value="todo">Not yet known</option></select>
+<select id="cardSet"><option value="all">All cards</option><option value="c2">Class 11/18 only</option><option value="e2">Module 2 eText review (Ch 1–6) — 11/20</option><option value="m2">Module 2 (Ch 1–6)</option><option value="c1">Class 11/16 only</option><option value="star">★ Must-memorize</option><option value="8">Ch 8 only</option><option value="7">Ch 7 only</option><option value="todo">Not yet known</option></select>
 <span class="pill" id="cardPos"></span>
 </div>
 <div class="card flash" id="flash"><div class="q" id="fq"></div><div class="a hide" id="fa"></div><div class="hint" id="fh">Tap to flip</div></div>
@@ -98,7 +98,7 @@ audio{width:100%;margin:2px 0 4px}
 
 <section id="quiz" class="hide">
 <div class="row" style="margin-bottom:6px">
-<select id="quizSet"><option value="mx">Module 1 Mock Exam (20) — 11/18</option><option value="c2">Class 11/18 (27)</option><option value="all">All questions</option><option value="t8">Ch 8 Test review (27) — 11/17</option><option value="m2">Module 2 Ch 1–6 (14)</option><option value="c1">Class 11/16 (Q26–40)</option><option value="8">Ch 8 (Q1–20)</option><option value="7">Ch 7 (Q21–25)</option><option value="miss">Missed last time</option></select>
+<select id="quizSet"><option value="s2">Module 2 Scenarios (42) — eText 11/20</option><option value="mx">Module 1 Mock Exam (20) — 11/18</option><option value="c2">Class 11/18 (27)</option><option value="all">All questions</option><option value="t8">Ch 8 Test review (27) — 11/17</option><option value="m2">Module 2 Ch 1–6 (14)</option><option value="c1">Class 11/16 (Q26–40)</option><option value="8">Ch 8 (Q1–20)</option><option value="7">Ch 7 (Q21–25)</option><option value="miss">Missed last time</option></select>
 <button class="btn" id="qStart">Start</button>
 <label class="pill" style="cursor:pointer"><input type="checkbox" id="qVoice"> 🔊 Read aloud</label>
 <span class="pill" id="qPos"></span>
@@ -111,7 +111,7 @@ audio{width:100%;margin:2px 0 4px}
 <div class="card">
 <h2>Listen while driving</h2>
 <p class="sub">Recorded audio: each question, a 5-second pause to answer out loud, then the answer. Start it before you drive.</p>
-<h3>Read aloud — Module 2 (new) and Class 11/16</h3><p class="sub">Your phone reads each card, pauses 5 seconds for you to answer out loud, then reads the answer. Keep the screen on.</p><div class="row"><select id="spSet"><option value="c2">Class 11/18 cards</option><option value="m2">Module 2 cards (Ch 1–6)</option><option value="c1">Class 11/16 cards</option><option value="star">★ Must-memorize only</option></select><button class="btn pri" id="spGo">Play</button><button class="btn" id="spStop">Stop</button><span class="pill" id="spPos">Ready</span></div><h3>Flashcards — 42 cards (about 10 min)</h3>
+<h3>Read aloud — Module 2 (new) and Class 11/16</h3><p class="sub">Your phone reads each card, pauses 5 seconds for you to answer out loud, then reads the answer. Keep the screen on.</p><div class="row"><select id="spSet"><option value="e2">Module 2 eText review cards</option><option value="c2">Class 11/18 cards</option><option value="m2">Module 2 cards (Ch 1–6)</option><option value="c1">Class 11/16 cards</option><option value="star">★ Must-memorize only</option></select><button class="btn pri" id="spGo">Play</button><button class="btn" id="spStop">Stop</button><span class="pill" id="spPos">Ready</span></div><h3>Flashcards — 42 cards (about 10 min)</h3>
 <audio controls preload="none" style="width:100%" src="audio/EMT_M1_Flashcards.mp3"></audio>
 <h3>Practice quiz — 25 questions (about 9 min)</h3>
 <audio controls preload="none" style="width:100%" src="audio/EMT_M1_Quiz.mp3"></audio>
@@ -325,6 +325,50 @@ const CARDS=[
 ["c2","Adrenal glands","On top of the kidneys. Release epinephrine (fight or flight), cortisol, aldosterone."],
 ["c2","Muscle types","Skeletal = voluntary. Smooth = involuntary, lines organs. Cardiac = heart."],
 ["c2","\u2605 Pediatric airway","More anterior, large tongue, large occiput tips the head forward when flat \u2192 towel under the shoulders."],
+["e2","★ Four EMS certification levels (low → high)","EMR → EMT → AEMT → Paramedic (National EMS Scope of Practice Model)."],
+["e2","Basic 911 vs Enhanced 911","Basic: call routed to a PSAP. Enhanced: caller's number and location sent automatically (Phase I = callback number; Phase II = latitude/longitude)."],
+["e2","Specialty receiving centers","Trauma, burn, obstetric, pediatric, poison, stroke, cardiac, hyperbaric, spine, psychiatric. Match the patient to the center."],
+["e2","★ Direct vs indirect medical oversight","Direct (online) = real-time orders by radio/phone. Indirect (offline) = protocols, standing orders, education, QI review — most of the medical director's work."],
+["e2","Standing orders","Part of the protocols you may perform without calling a physician first."],
+["e2","EMT functions under…","The medical director's license — your care is an extension of the physician's."],
+["e2","Quality improvement (QI / CQI)","Ongoing internal and external review of calls and outcomes to find weak spots and fix them. Your part: complete, accurate PCRs and taking feedback."],
+["e2","Mobile Integrated Healthcare / Community Paramedicine","EMS beyond 911: education, prevention, chronic disease checks, post-discharge follow-up."],
+["e2","★ Three stress reactions","Acute = during/right after the call. Delayed = days to years later (e.g., PTSD). Cumulative = slow build-up from repeated stress (burnout)."],
+["e2","★ CISD vs defusing","Defusing: short, within ~8 h, only those most involved. CISD: structured debriefing, ideally 24–72 h after the incident."],
+["e2","Stress signs — 5 areas","Thinking (confusion), psychological (anger, depression), physical (exhaustion, headache), behavioral (more alcohol, overeating), social (conflicts)."],
+["e2","Pathogen types","Bacteria (live alone), viruses (need host cell), fungi, protozoa, helminths (worms)."],
+["e2","★ Hand washing","Wet → soap → lather backs, between fingers, under nails → scrub ≥20 s → rinse → dry."],
+["e2","High-visibility vest classes","Class 1 <25 mph traffic. Class 2 ≥25 mph or attention diverted. Class 3 = highest risk, attention away from road."],
+["e2","Specialized rescue rule","Hazmat, swift water, confined space: do not enter without the training and equipment. Stage and call the right team."],
+["e2","Resilience","Ability to cope with stress without lasting harm — sleep, fitness, support, no self-medicating."],
+["e2","★ Advance directives","Living will (wishes if unable to decide) · Durable POA for health care (names a proxy) · DNR (most common in the field) · POLST/MOLST (physician order, travels with patient)."],
+["e2","★ Assault vs battery","Assault = threat that makes the patient fear harm (no touch needed). Battery = touching without consent."],
+["e2","False imprisonment","Transporting or holding a competent patient against their will without legal authority."],
+["e2","★ Abandonment","Ending care without handing off to someone of equal or higher training — including leaving the ED before formal transfer."],
+["e2","Libel vs slander","Libel = written false statement. Slander = spoken. Together = defamation."],
+["e2","EMTALA / COBRA","Federal law: hospitals must screen and stabilize emergency patients regardless of ability to pay; transfers must meet rules."],
+["e2","★ Refusal — protect yourself","Assess fully → check capacity → explain risks (including death) → try again → consult medical direction → document and get signed refusal, witness → tell them to call back."],
+["e2","Mandatory reports (vary by state)","Child/elder abuse, crime injuries (e.g., gunshot), some drug-related injuries, certain diseases. Baby safe-haven laws allow legal infant surrender."],
+["e2","★ Pertinent negatives","Findings you'd expect but the patient denies — e.g., chest pain but no shortness of breath. Document them."],
+["e2","Chief complaint in the PCR","In the patient's own words (or a bystander's if unresponsive)."],
+["e2","PCR functions","Continuity of care, legal record, billing/administration, education/research, QI."],
+["e2","CHEATED","Chief complaint, History, Exam, Assessment, Treatment, Evaluation, Disposition."],
+["e2","Triage tag","Used in MCIs; data from the tag later completes the PCR."],
+["e2","★ SBAR","Situation, Background, Assessment, Recommendation — structured report to medical direction or hospital."],
+["e2","Radio terms","Copy = understood · Stand by = wait · Say again = repeat · Over = done, awaiting reply · Clear = end of transmission · ETA."],
+["e2","Repeater","Receives a weak radio signal and rebroadcasts it stronger to extend range."],
+["e2","Therapeutic communication techniques","Facilitation, clarification, summary, explanation, silence, reflection, empathy, confrontation."],
+["e2","★ Question types","Open-ended = patient's own words. Closed = specific/yes-no. Leading = suggests the answer — avoid."],
+["e2","Intimate zone","Less than about 1½ feet. Explain before you enter it."],
+["e2","Interview don'ts","No false assurance, no leading questions, no 'why' questions that blame, don't interrupt, no inappropriate advice."],
+["e2","★ Four body-mechanics principles","Keep load close · use legs, hips, glutes + tight abs · 'stack' shoulders over hips over feet · reduce lift height/distance."],
+["e2","Power lift / power grip","Feet shoulder-width, back locked, lift with legs. Grip: palm and fingers fully on handle, hands ~10 in apart."],
+["e2","★ When to do an emergency move","Immediate danger (fire, explosion, hazmat), can't protect patient from scene hazards, or can't give lifesaving care where patient lies."],
+["e2","Emergency drags","Armpit–forearm drag, shirt drag, blanket drag — pull along the long axis of the body."],
+["e2","Urgent move","Rapid extrication — life threat needs care now (e.g., unstable patient in a car)."],
+["e2","Non-urgent moves","Direct ground lift, extremity lift, direct carry, draw sheet — no threat, no suspected spine injury."],
+["e2","★ Positioning","Unresponsive, no spine injury: left lateral recumbent. Chest pain/dyspnea: position of comfort (sitting). Shock: supine. Nauseated: sitting/recovery. Pregnant >20 wk: left side."],
+["e2","Patient-carrying devices","Wheeled stretcher, portable stretcher, stair chair, backboard, scoop, basket (Stokes), flexible stretcher."]
 ];
 const Q=[
 ["8","Without oxygen, cells produce energy by anaerobic metabolism. The main harmful by-product is:",["carbon dioxide","lactic acid","bicarbonate","water"],1,"Anaerobic metabolism makes lactic acid → acidosis."],
@@ -414,6 +458,48 @@ const Q=[
 ["c2","A child lying flat may block his own airway because of a large:",["chest", "occiput", "neck", "trachea"],1,"Put a towel under the shoulders."],
 ["c2","Which is an example of COPD?",["pneumonia", "emphysema", "appendicitis", "diabetes"],1,"COPD includes emphysema and chronic bronchitis."],
 ["c2","Smooth muscle is:",["voluntary", "involuntary and lines the organs", "found only in the heart", "attached to bones"],1,"Skeletal is voluntary; cardiac is the heart."],
+["s2","You arrive at a highway crash. Your partner asks what Phase II Enhanced 911 gave dispatch. It provides:",["Caller name only","Callback number only","Caller's latitude/longitude","Patient's medical history"],2,"Phase II adds location coordinates; Phase I adds the callback number."],
+["s2","Your protocol lets you give oral glucose to a known diabetic without calling the physician. This is an example of:",["Direct medical oversight","A standing order","Scope creep","Implied consent"],1,"Standing orders = protocols you do without real-time contact."],
+["s2","Mid-call you radio the base physician and receive an order for a second aspirin dose. This is:",["Online (direct) medical direction","Offline medical direction","Quality improvement","Mutual aid"],0,"Real-time physician orders = online/direct."],
+["s2","A 78-year-old with stroke signs. Family wants the small hospital 3 blocks away; a stroke center is 20 minutes away. Best action:",["Go where family wants","Follow destination protocol, advocate for the stroke center, use medical direction if needed","Let the patient's niece sign a refusal","Wait for a paramedic"],1,"Patient advocacy + specialty center + medical direction."],
+["s2","Your agency's QI committee flags your PCR for missing vital signs. Your best response:",["Ignore it","Accept feedback and document complete vitals on every call","Rewrite the old PCR to add vitals you didn't take","Ask your partner to sign it"],1,"QI is non-punitive improvement; never falsify."],
+["s2","After a pediatric death call, your partner is quiet, angry, and says he will quit. This is most likely:",["Cumulative stress reaction","Acute stress reaction","Burnout","Delayed stress reaction"],1,"Right after the incident = acute."],
+["s2","Six months after a mass shooting, a coworker has nightmares and flashbacks. This fits:",["Acute stress reaction","Delayed stress reaction (e.g., PTSD)","Normal fatigue","Defusing"],1,"Delayed = weeks to years later."],
+["s2","Your crew wants a short, informal talk only for those most involved, about 3 hours after a bad call. That is:",["CISD","Defusing","Peer review","QI"],1,"Defusing ≤ ~8 h, only those most involved; CISD 24–72 h."],
+["s2","A terminally ill patient says, 'Just let me see my grandson graduate, then I'll be ready.' Which stage?",["Denial","Anger","Bargaining","Acceptance"],2,"Making deals = bargaining."],
+["s2","A dying patient yells at you angrily. The best response is to:",["Defend yourself","Leave the room","Stay calm, don't take it personally, keep caring","Tell the family to calm him"],2,"Anger often targets the EMT — don't become defensive."],
+["s2","You are first on scene at a tanker rollover with a placard and a vapor cloud. You should:",["Rescue the driver quickly","Stay upwind/uphill at a safe distance and call hazmat","Enter with gloves and a mask","Move closer to read the placard"],1,"No rescue without training and equipment."],
+["s2","Working on a highway shoulder with traffic over 25 mph, the minimum vest class is:",["Class 1","Class 2","Class 3","None needed"],1,"Class 2 at ≥25 mph; Class 3 when attention is fully off the road."],
+["s2","Patient coughing blood, recent weight loss and night sweats (possible TB). Your PPE:",["Gloves only","Surgical mask on you","N95 on you; surgical mask on the patient if tolerated","Gown only"],2,"Airborne precautions."],
+["s2","A shooting call: police are still clearing the house. You should:",["Go in to save time","Stage at a safe distance until police say the scene is secure","Enter with a vest","Wait inside the ambulance at the door"],1,"Scene safety first."],
+["s2","An alert 45-year-old with chest pain says, 'OK, go ahead,' after you explain care. This is:",["Implied consent","Expressed (informed) consent","Involuntary consent","Minor consent"],1,"Competent adult agrees after explanation."],
+["s2","Unresponsive adult found down, no family present. You treat under:",["Expressed consent","Implied consent","Involuntary consent","No consent — can't treat"],1,"Emergency doctrine."],
+["s2","A 15-year-old injured at soccer; parents can't be reached and she has a deformed, pulseless forearm. You:",["Wait for parents","Treat under implied consent","Get the coach's signature for consent","Refuse care"],1,"Emergency with no guardian → implied consent."],
+["s2","You tell a frightened patient, 'If you don't hold still, I'll strap you down.' This could be:",["Battery","Assault","Libel","Abandonment"],1,"Threat creating fear = assault."],
+["s2","You splint the arm of a competent adult who clearly refused care. This is:",["Assault","Battery","Negligence only","Implied consent"],1,"Touching without consent = battery."],
+["s2","At the ED you leave the patient on the stretcher and go back in service before giving a report. This is:",["Defamation","Abandonment","False imprisonment","Standard practice"],1,"Must formally transfer care."],
+["s2","Patient with family-presented DNR, in cardiac arrest. First step:",["Start CPR until the hospital decides","Confirm the DNR is valid per local protocol","Ignore it — only a living will counts","Call police"],1,"Verify DNR/POLST validity per protocol."],
+["s2","For negligence, the patient must prove duty, breach, damages and:",["Intent","Proximate cause","Malice","Payment"],1,"Breach must cause the damages."],
+["s2","Diabetic refuses transport after you treat low sugar. He is alert and oriented. Best next step:",["Leave immediately","Explain risks, try to persuade, consult medical direction, document and get signed refusal","Restrain and transport","Call his employer"],1,"Refusal protocol."],
+["s2","A patient who refuses care smells of alcohol and is confused. You should:",["Accept the refusal","Question capacity; contact medical direction/police per protocol","Have a bystander sign","Leave a phone number"],1,"Impaired patients may lack capacity."],
+["s2","Gunshot wound call at an apparent crime scene. You should:",["Move items to reach the patient freely","Treat the patient, touch only what you must, use one path, document","Collect the weapon","Cut through the bullet hole in the shirt"],1,"Preserve evidence while giving care."],
+["s2","Chest-pain patient denies shortness of breath and nausea. In the PCR these are:",["Chief complaint","Pertinent negatives","Objective signs","Assessment"],1,"Expected symptoms the patient denies."],
+["s2","You realize you wrote the wrong pulse on a paper PCR. Correct method:",["White-out and rewrite","Single line through, correct, initial and date","Tear up and start over","Leave it"],1,"Never erase or hide an error."],
+["s2","Which goes in the 'S' of SOAP?",["BP 140/90","'My chest feels heavy'","Gave aspirin","Possible MI"],1,"Subjective = what the patient tells you."],
+["s2","At an MCI with 20 patients, you document mainly on:",["Full PCR per patient at the scene","Triage tags, then complete PCRs later","Nothing until the end","Your phone"],1,"Tags first; PCRs completed later."],
+["s2","Calling medical direction for an order, the best structure is:",["SAMPLE","SBAR","OPQRST","AVPU"],1,"Situation, Background, Assessment, Recommendation."],
+["s2","Hospital radios 'Say again.' They mean:",["End of transmission","Message received","Repeat your message","Wait"],2,"Say again = repeat."],
+["s2","Your radio can't reach the hospital from a rural valley. The device that extends range is a:",["Encoder","Repeater","Decoder","Base pager"],1,"Repeater rebroadcasts a stronger signal."],
+["s2","Best first question to an alert patient:",["'Is your pain sharp?'","'Tell me what's going on today.'","'You didn't drink, right?'","'Why didn't you call earlier?'"],1,"Open-ended first; avoid leading and blaming questions."],
+["s2","Patient: 'Am I going to die?' Best answer:",["'Everything will be fine.'","'We're doing everything we can and taking you to the right hospital.'","'Don't think about it.'","Say nothing"],1,"No false assurance; honest and calm."],
+["s2","You repeat back, 'So the pain started while you were mowing?' This technique is:",["Confrontation","Summary/reflection","Silence","Facilitation by touch"],1,"Restating confirms understanding."],
+["s2","Lifting a stretcher, the most important rule is:",["Bend at the waist","Keep the load close, back locked, lift with legs","Twist to save time","Reach out with straight arms"],1,"Body-mechanics principles."],
+["s2","House fire: patient unresponsive in a smoke-filled room. Move:",["Non-urgent extremity lift","Emergency drag (e.g., blanket or shirt drag)","Wait for a backboard","Direct carry"],1,"Immediate danger = emergency move."],
+["s2","Car crash, patient in shock in the driver seat, needs care now. Move:",["Rapid extrication (urgent move)","Extremity lift","Draw sheet","Leave in the car"],0,"Urgent life threat → rapid extrication."],
+["s2","Unresponsive overdose patient, breathing, no trauma. Transport position:",["Supine","Left lateral recumbent (recovery)","Prone","Sitting"],1,"Protects the airway."],
+["s2","32 weeks pregnant, dizzy when lying flat. Position:",["Supine flat","Left side","Prone","Trendelenburg"],1,"Left side relieves pressure on the vena cava (>20 weeks)."],
+["s2","Shortness-of-breath patient, alert:",["Supine","Position of comfort, usually sitting up","Left lateral","Prone"],1,"Sitting eases breathing."],
+["s2","Getting a patient down narrow stairs, best device:",["Basket stretcher","Stair chair (if no spine concern)","Wheeled stretcher","Scoop"],1,"Stair chair for stairs."]
 ];
 const S={get(k,d){try{const v=localStorage.getItem('emtm1_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('emtm1_'+k,JSON.stringify(v))}catch(e){}}};
 let known=new Set(S.get('known',[])),missed=S.get('missed',[]),best=S.get('best',null);
@@ -434,7 +520,7 @@ $('cardSet').onchange=buildDeck;
 let qs=[],qi=0,score=0,wrong=[];
 function startQuiz(){const s=$('quizSet').value;qs=Q.map((q,i)=>i).filter(i=>s==='all'||(s==='miss'?missed.includes(i):Q[i][0]===s));if(!qs.length){$('qBox').innerHTML='<p>No missed questions saved yet. Take the full quiz first.</p>';$('qPos').textContent='';$('qBar').style.width='0';return}qs.sort(()=>Math.random()-.5);qi=0;score=0;wrong=[];showQ()}
 function showQ(){const n=qs[qi],q=Q[n];$('qPos').textContent=(qi+1)+' / '+qs.length;$('qBar').style.width=(qi/qs.length*100)+'%';
-let h='<div class="sub">Q'+(n+1)+' · '+({c1:'Class 11/16',c2:'Class 11/18',t8:'Ch 8 Test review',m2:'Module 2',mx:'Module 1 Mock Exam'}[q[0]]||'Ch '+q[0])+'</div><p style="font-weight:600">'+q[1]+'</p>';q[2].forEach((o,i)=>h+='<button class="opt" data-i="'+i+'">'+'ABCD'[i]+') '+o+'</button>');h+='<div id="qAfter"></div>';$('qBox').innerHTML=h;
+let h='<div class="sub">Q'+(n+1)+' · '+({c1:'Class 11/16',c2:'Class 11/18',t8:'Ch 8 Test review',m2:'Module 2',mx:'Module 1 Mock Exam',s2:'Module 2 Scenario'}[q[0]]||'Ch '+q[0])+'</div><p style="font-weight:600">'+q[1]+'</p>';q[2].forEach((o,i)=>h+='<button class="opt" data-i="'+i+'">'+'ABCD'[i]+') '+o+'</button>');h+='<div id="qAfter"></div>';$('qBox').innerHTML=h;
 $('qBox').querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(+b.dataset.i));qSpeakQ(q)}
 function answer(i){const n=qs[qi],q=Q[n],btns=$('qBox').querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);btns[q[3]].classList.add('ok');if(i===q[3])score++;else{btns[i].classList.add('bad');wrong.push(n)}
 $('qAfter').innerHTML='<div class="why"><b>'+(i===q[3]?'Correct.':'Answer: '+'ABCD'[q[3]]+'.')+'</b> '+q[4]+'</div><div class="row" style="margin-top:10px"><button class="btn pri" id="qNext" style="flex:1">'+(qi+1<qs.length?'Next':'See score')+'</button></div>';$('qNext').onclick=()=>{qVoiceStop();qi++;qi<qs.length?showQ():finish()};qSpeakA(i===q[3],q)}
