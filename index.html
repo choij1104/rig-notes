@@ -707,7 +707,7 @@ $('spGo').onclick=spPlay;$('spStop').onclick=()=>{spStop();$('spPos').textConten
 buildDeck();prog();
 // chapters: theory + jump to cards/quiz
 function goTab(t){document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x.dataset.t===t));['chap','due','cards','quiz','listen','review'].forEach(x=>$(x).classList.toggle('hide',x!==t));window.scrollTo(0,0)}
-function chList(){const order=[7,8,1,2,3,4,5,6,0];let h='<div class="card"><h2>Study by chapter</h2><p class="sub">Each chapter: theory first, then its cards and quiz. Module 1 = Ch 7–8 · Module 2 = Ch 1–6.</p></div>';
+function chList(){const order=[1,2,3,4,5,6,7,8,0];let h='<div class="card"><h2>Study by chapter</h2><p class="sub">Each chapter: theory first, then its cards and quiz. Now studying: Module 2 = Ch 1–6 (exam 11/27). Module 1 = Ch 7–8 (done).</p></div>';
 order.forEach(n=>{const c=CH[n],nc=CARDS.filter(x=>x[3]===n).length,nq=Q.filter(x=>x[5]===n).length,kn=CARDS.filter((x,i)=>x[3]===n&&known.has(i)).length;
 h+='<div class="card chl" data-ch="'+n+'"><div class="chn">'+(n||'+')+'</div><div style="flex:1"><div class="tt">'+(n?'Ch '+n+' · ':'')+c.t+'</div><div class="sub">'+c.m+' · '+nc+' cards ('+kn+' known) · '+nq+' quiz Q</div></div><div class="sub">›</div></div>'});
 $('chList').innerHTML=h;$('chList').querySelectorAll('.chl').forEach(e=>e.onclick=()=>chOpen(+e.dataset.ch))}
